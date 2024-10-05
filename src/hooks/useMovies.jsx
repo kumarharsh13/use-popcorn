@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 
-const KEY = "f84fc31d";
-
+const KEY = "a6ab29cc";
 
 export function useMovies(query, callback) {
 	const [movies, setMovies] = useState([]);
-  // const [watched, setWatched] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -22,7 +20,7 @@ export function useMovies(query, callback) {
             { signal: controller.signal }
           );
           if (!res.ok) {
-            throw new Error("Something went wrong with fetchinh movies...!!!!");
+            throw new Error("Something went wrong with fetching movies...!!!!");
           }
           const data = await res.json();
           if (data.Response === "False") {

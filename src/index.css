@@ -54,7 +54,8 @@ body {
   max-width: 42rem;
   background-color: var(--color-background-500);
   border-radius: 0.9rem;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   position: relative;
 }
 
@@ -138,7 +139,8 @@ body {
 .list {
   list-style: none;
   padding: 0.8rem 0;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .list-watched {
@@ -359,6 +361,101 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #a1a1a1;
+}
+
+
+.loader-conatiner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0rem;
+}
+
+.loader {
+  border: 8px solid var(--color-text-dark);
+  border-top: 8px solid var(--color-text);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media only screen and (max-width: 48em) {
+
+  .logo h1 {
+    font-size: 180%;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .summary h2 {
+    font-size: 130%;
+  }
+
+  .summary div,
+  .list li {
+    font-size: 110%;
+  }
+
+  .btn-delete {
+    height: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 42em) {
+
+  .logo h1,
+  .logo span {
+    font-size: 120%;
+  }
+
+  .search {
+    width: 100%;
+    font-size: 150%;
+  }
+
+  .num-results {
+    font-size: 120%;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .box {
+    max-width: 100%;
+  }
+
+  .btn-toggle {
+    position: relative;
+    top: 0;
+    left: 90%;
+    height: 2.4rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--color-background-900);
+    color: var(--color-text);
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
 }
 
 /*
